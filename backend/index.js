@@ -1,21 +1,20 @@
-const express  = require('express');
-const app  = express();
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
+require('dotenv').config();
+const getAndSaveData =  require('./src/helpers/saveData');
+//BD config
+require('./src/database/configs/config').dbConnection();
 
-const readData  = require('./src/helpers/readData.js');
+//read and save data
+getAndSaveData();
 
-//read file
-readData((err, data)=>{
+//Middleware to JSON 
+app.use(express.json());
 
-    if(err){
-        console.error('Error read file', err);
-        return;
-    }
+app.use('/api/articles',require('./src/routes/article'));
 
-    console.log('Datos leídos:', data);
-});
-
-
-app.listen(3000, (err)=>{
-    if(err) throw new Error(err);
+app.listen(port, (err) => {
+    if (err) throw new Error(err);
     console.error('Server is success', 3000);
 });
