@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
 import 'package:frontend/data/entities/article.dart';
 import 'package:frontend/data/repositories/articles/articles_repository.dart';
@@ -12,7 +13,7 @@ class ArticlesBloc extends Bloc<ArticlesEvent, ArticlesState> {
   ArticlesBloc(this._articlesRepository) : super(const ArticlesState()) {
     on<GetAllArticlesEvent>(
       (event, emit) => emit(state.copyWith(
-          articles: event.articles, articlesStatus: event.articlesStatus)),
+          articles: event.articles, articlesStatus: event.articlesStatus, errorText: event.errorText)),
     );
   }
 
@@ -30,6 +31,7 @@ class ArticlesBloc extends Bloc<ArticlesEvent, ArticlesState> {
       add(GetAllArticlesEvent(
           articlesStatus: ArticlesStatus.success, articles: response));
     } catch (e) {
+      print(e);
       add(GetAllArticlesEvent(
           articlesStatus: ArticlesStatus.error, errorText: e.toString()));
     }

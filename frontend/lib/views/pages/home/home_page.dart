@@ -125,6 +125,15 @@ class _HomePageState extends State<HomePage> {
       },);
      }
 
+     if(state.errorArticle){
+      return Center(child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+        const Icon(Icons.error,size: 60,),
+        Text(state.errorText.toString())
+      ],),);
+     }
+
      return const SizedBox.shrink();
    },); 
   }
@@ -202,6 +211,15 @@ class _HomePageState extends State<HomePage> {
           ),
         );
       },);
+     }
+
+     if(state.errorArticle){
+      return Center(child: Column(
+         mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+        const Icon(Icons.error,size: 60,),
+        Text(state.errorText.toString())
+      ],),);
      }
 
      return const SizedBox.shrink();

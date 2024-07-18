@@ -20,7 +20,7 @@ class HttpArticlesImpl extends HttpArticles{
     List<Article> response  =[];
     AM.ArticlesModel articles;
     try {
-      final resp  = await  _dio.get("/all");
+      final resp  = await  _dio.get("");
       articles  = AM.ArticlesModel.fromJson(resp.data);
       response  = (articles.articles??[]).map((e)=>ArticlesMapper.article(e)).toList();
     } catch (e) {
