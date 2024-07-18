@@ -1,6 +1,8 @@
 
 
 
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:frontend/data/entities/article.dart';
 import 'package:frontend/data/mappers/articles/articles_mapper.dart';
@@ -10,7 +12,7 @@ import 'package:frontend/data/remotes/articles/http_articles.dart';
 class HttpArticlesImpl extends HttpArticles{
 
   //IOS
-  final _dio  = Dio(BaseOptions(baseUrl: "http://localhost:3000/articles"));
+  final _dio  = Dio(BaseOptions(baseUrl:(Platform.isAndroid)? "http://10.0.2.2:3000/articles": "http://localhost:3000/articles"));
   
   //ANDROID
   //final _dio  = Dio(BaseOptions(baseUrl: "http://10.0.2.2:3000/articles"));

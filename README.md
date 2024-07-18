@@ -38,13 +38,12 @@ La aplicación fue creada con Flutter 3.22.2, para poder correrlo se necesita ab
 
 1.  **Ejecutar el siguiente comando**  `flutter pub get` con este comando podran bajar las dependencias del proyecto para poder usarlo de forma adecuada.
 2.  **Ejecutar el siguiente comando:** `flutter run` o tambien ejectuarlo desde el menu superior `run-> start debugging`.
-3. **En caso de estar desde un emulador android** se debera acceder a la ruta `lib/data/remotes/articles/http_articles_impl.dart`, descomentar el apartado que dice android en la linea 16 y comentar la linea 13, en caso de ser IOS no es necesario modificar nada
 
 ## SE CREO UNA VISTA EXTRA CON LOS ELEMENTOS DISPONIBLES
 
 Se creo la vista solicitada con el Figma proporcionado, de igual manera se creo una segunda vista con mis propios criterios de diseño para poder visualizarla seguir las siguientes instrucciones. 
 
-1. **Dirigirse a la siguiente ruta:** `lib/views/pages/home/home_page.dart` en la linea 50 cambiar _body() por _body1() para poder visualizar el segundo diseño.
+1. **Dirigirse a la siguiente ruta:** `lib/views/pages/home/home_page.dart` en la linea 40 cambiar _body() por _body1() para poder visualizar el segundo diseño.
 
 
 Cualquier duda quedo atento pueden comunicarse conmigo por medio de mi mail  `samueldzibsads@gmail.com` o tambien via Whatsapp al núm que les proporcione.
