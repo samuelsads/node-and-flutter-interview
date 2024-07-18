@@ -10,10 +10,10 @@ import 'package:frontend/data/remotes/articles/http_articles.dart';
 class HttpArticlesImpl extends HttpArticles{
 
   //IOS
-  final _dio  = Dio(BaseOptions(baseUrl: "http://localhost:3000/api/articles"));
+  final _dio  = Dio(BaseOptions(baseUrl: "http://localhost:3000/articles"));
   
   //ANDROID
-  //final _dio  = Dio(BaseOptions(baseUrl: "http://10.0.2.2:3000/api/articles"));
+  //final _dio  = Dio(BaseOptions(baseUrl: "http://10.0.2.2:3000/articles"));
 
   @override
   Future<List<Article>> getAll()async {
