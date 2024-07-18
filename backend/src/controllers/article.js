@@ -9,7 +9,7 @@ const allArticles  = async(req, res = response)=>{
         const articles  = await Article.find();
         return res.json({success:true, articles, msg: "sucess all data"});
     }catch{
-        res.status(500).json({success:true, data:clients});
+        res.status(500).json({success:false, data:clients});
     }
 }
 

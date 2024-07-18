@@ -10,7 +10,7 @@ const router  = Router();
 
 
 
-router.get('/all', allArticles);
+router.get('/', allArticles);
 
 router.get('/:id', findById);
 
