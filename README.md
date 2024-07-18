@@ -1,68 +1,50 @@
-# Prueba de backend en NodeJS
+# INSTRUCCIONES BACKEND
 
-La primer parte de la prueba tiene como objetivo evaluar tus conocimientos y competencias con la tecnologíad NodeJs y Mongodb.
+A continuación las instrucciones para poder correr el proyecto
 
-## Descripción de la tarea
+## INSTRUCCIONES
 
-La siguiente tarea consiste en cargar y almacenar los datos de un archivo en una base de datos local con Mongodb y permitir consumir la información almacenada, para lograr estos tienes que: 
+Lo primero que se debe hacer es clonar el repositorio desde [URL PARA CLONAR](https://github.com/samuelsads/node-and-flutter-interview.git), posterior a ello seguir los siguiente pasos
 
-1.  **Cargar los datos a 'Articles':** Utilizar el archivo proporcionado para obtener los datos y guardarlos en una colección en la base de base de datos local.
+**En la carpeta backend:**
 
-2.  **Exponer los datos de obtenidos:** Implementar un endpoint que permita obtener los datos de la colección 'Articles'.
+1.  **Instalar dependencias necesarias:** para ello correr el comando **npm install**
 
-## Requisitos
+2.  **Correr el projecto:** Utilizar el siguiente comando **npm run start:dev**
 
-1. Utilizar **MongoDB** como base de datos para esta aplicación.
-2. Crear una aplicación de NodeJS con Express.
-3. Cargar los datos del archivo `data.json` en una colección llamada `/articles` en la base de datos.
-3. El endpoint de la API debe llamarse `/articles` y responder en **formato JSON**.
+## RUTAS SOPORTADAS(PUERTO 3000 localhost:3000/)
 
-## Criterios de evaluación
+1. **/articles** -> tipo `get`
+2. **/articles/:id** ->tipo `get`
+3. **articles/:id** ->tipo `delete`
 
-Tu entrega será evaluada en función de los siguientes criterios:
 
-1.  **Funcionalidad:** ¿Se pueden recuperar los datos a través del endpoint de la API?
-2.  **Calidad de Código y Estructura:** ¿El código está bien estructurado, es legible y sigue las convenciones de NodeJS?. 
-3.  **Manejo de Errores:** ¿Se gestionan los errores y los registros están implementados correctamente?
-3.  **Manejo de la base de datos:** ¿Se logro administrar la base de datos y los datos obtenidos fueron cargado del archivo `data.json`?
-4.  **Bonificaciones:** Se considerarán funcionalidades adicionales o mejoras más allá de los requisitos básicos.
+## LOGICA PARA LEER Y GUARDAR EL JSON SE ENCUENTRA EN:
 
-# Prueba de frontend en Flutter
+En estas rutas encontraran la logica para leer y guardar la data del json a la base de datos, no es necesario ejecutarlo, se ejecuta cuando no existe data en la db de mongo atlas.
 
-La segunda parte de la prueba tiene como objetivo evaluar tus capacidades y habilidades en flutter.
+1.  **src/helpers/readData.js** 
+2.  **src/helpers/saveData.js**  
 
-## Descripción de la tarea
-La siguiente tarea consiste en crear una aplicación en Flutter que consuma el endpoint `/articles` proporcionado por la API de NodeJS con Express que creaste en el tarea anterior, para lograr eso tienes que: 
+## La información de la Base de datos y el puerto se encuentran en .env
+## La base de datos se encuentra en la nube, tienen los accesos para corroborar en .env
 
-1.  **Consumir endpoint '/articles':** Desarrollar una aplicación en Flutter que se consuma al endpoint `/articles` de la API de NodeJS con Express.
-2.  **Recuperar y mostrar los datos del endpoint:** Implementar interfaces de usuarios que muestre los datos.
+# FRONTEND
 
-## Requisitos
+A continuación las intrucciones para poder correr el proyecto Frontend.
 
-Asegúrate de cumplir con los siguientes requisitos al desarrollar la aplicación en Flutter. 
+## INSTRUCCIONES
+La aplicación fue creada con Flutter 3.22.2, para poder correrlo se necesita abrir la carpeta frontend y seguir las instrucciones:
 
-1. La aplicación debe ser capaz de realizar solicitudes HTTP al endpoint `/articles` de la API de NodeJS con Express.
-2. Utilizar el método adecuado en Flutter para realizar llamadas a la API.
-4. Se debe de crear una vista donde se debe listar los datos obtenidos, puedes ver el [diseño acá](https://www.figma.com/design/QsD5eTs7WIiM9XiMsOcD3C/Design-Flutter---Node?node-id=0-1&t=KExMC347nPlzJF5B-1) .
-5. Al darle click a un item de la lista se tiene que redireccionar al Url del campo llamado `url`. 
+1.  **Ejecutar el siguiente comando**  `flutter pub get` con este comando podran bajar las dependencias del proyecto para poder usarlo de forma adecuada.
+2.  **Ejecutar el siguiente comando:** `flutter run` o tambien ejectuarlo desde el menu superior `run-> start debugging`.
+3. **En caso de estar desde un emulador android** se debera acceder a la ruta `lib/data/remotes/articles/http_articles_impl.dart`, descomentar el apartado que dice android en la linea 16 y comentar la linea 13, en caso de ser IOS no es necesario modificar nada
 
-## Criterios de evaluación
+## SE CREO UNA VISTA EXTRA CON LOS ELEMENTOS DISPONIBLES
 
-Tu entrega será evaluada en base a los siguientes criterios:
+Se creo la vista solicitada con el Figma proporcionado, de igual manera se creo una segunda vista con mis propios criterios de diseño para poder visualizarla seguir las siguientes instrucciones. 
 
-1.  **Funcionalidad:** ¿La aplicación de Flutter se conecta con éxito al endpoint `/articles` de la API de NodeJS con Express y muestra los datos obtenidos?
-2.  **Interfaz de Usuario:** ¿La interfaz de usuario es amigable y presenta los datos de manera clara y legible según el diseño?
-3.  **Manejo de Datos:** ¿La aplicación en Flutter maneja los datos de manera efectiva, sin errores ni inconsistencias?
-4.  **Calidad de Código y Estructura:** ¿El código está organizado, sigue las mejores prácticas de Flutter y es fácil de entender?
-5.  **Manejo de Errores:** ¿La aplicación maneja adecuadamente los errores en caso de problemas de conectividad o de datos faltantes?
-6.  **Bono:** Se considerarán funcionalidades adicionales o mejoras más allá de los requisitos básicos.
+1. **Dirigirse a la siguiente ruta:** `lib/views/pages/home/home_page.dart` en la linea 50 cambiar _body() por _body1() para poder visualizar el segundo diseño.
 
-## Entrega
 
-Una vez que hayas completado las tareas, sube tu codigo a un repositorio de GitHub con su documentación para su debida evaluación.
-
-## Notas importantes
-
-1. La carga de datos en la colección puede ser realizada de manera automatizada o manualmente utilizando herramientas gráficas y/o comandos.
-2. Puedes utilizar librerias según tus criterios. 
-3. Se tiene que completar todas tareas asignadas para la realizar la evaluación.
+Cualquier duda quedo atento pueden comunicarse conmigo por medio de mi mail  `samueldzibsads@gmail.com` o tambien via Whatsapp al núm que les proporcione.
