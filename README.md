@@ -10,6 +10,8 @@ Lo primero que se debe hacer es clonar el repositorio desde [URL PARA CLONAR](ht
 
 1.  **Instalar dependencias necesarias:** para ello correr el comando **npm install**
 
+2. **AGREGAR el archivo .env propocionado en el correo** 
+
 2.  **Correr el projecto:** Utilizar el siguiente comando **npm run start:dev**
 
 ## RUTAS SOPORTADAS(PUERTO 3000 localhost:3000/)
